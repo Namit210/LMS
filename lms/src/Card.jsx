@@ -1,12 +1,9 @@
-import image from './assets/sample.jpg'
 
-export function CourseCard({ title, content }) { 
+export function CourseCard({ title, subtitle, imageUrl, level }) { 
 
     const imageStyle = {
-        // height: '10rem',
         width: '100%'
-        // padding:'0px    ',
-        // margin:'0px'
+        
     }
 
     const headingStyle = {
@@ -22,7 +19,7 @@ export function CourseCard({ title, content }) {
     const subtextStyle = {
         fontSize: '0.95rem',
         color: '#666',
-        margin: '0 0.6rem',
+        margin: '0 0.3rem',
         lineHeight: '1.6',
         fontFamily: 'Open Sans, sans-serif'
     }
@@ -63,17 +60,17 @@ export function CourseCard({ title, content }) {
     margin:'0',
     overflow:'hidden'
 }}>
-    <img src={image} alt="image" style={imageStyle} />
+    <img src={imageUrl} alt="image" style={imageStyle} />
     <div>
-    <div style={tagStyle}>Beginner</div>
+    <div style={tagStyle}>{level}</div>
     </div>
-    <div style={headingStyle}>Introduction to Bhagavad Gita</div>
+    <div style={headingStyle}>{title}</div>
 
     <div style={{
         padding:'0.5rem'
     }}>
 
-    <p style={subtextStyle}>Explore the timeless wisdom of the Bhagavad-gita and its practical application</p>
+    <p style={subtextStyle}>{subtitle}</p>
     <button style={buttonStyle}>View Course</button>
     </div>
 

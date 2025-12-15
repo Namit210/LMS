@@ -1,5 +1,8 @@
 import bgimage from './assets/sample.jpg'
 import {CourseCard} from './Card.jsx'
+import gita from './assets/gita.jpg'
+import mantra from './assets/mantra.jpeg'
+import kirtan from './assets/kirtan.jpg'
 
 export default function Home()
 {
@@ -48,7 +51,7 @@ const headingStyle2 = {
     marginTop:'2rem'
 }
 
-const buttonStyle2 ={fontFamily:'open sans,serif', color:' #E6A64CFF', backgroundColor:'#FFFFFFFF', borderColor:'#E6A64CFF', borderRadius:'6px', fontSize:'14px', padding:'0.4rem'}
+const buttonStyle2 ={fontFamily:'open sans,serif', color:' #92692fff', backgroundColor:'#FFFFFFFF', borderColor:'#E6A64CFF', borderRadius:'6px', fontSize:'14px', padding:'0.4rem'}
     return(
         <div>
         <div style={pageStyle}>
@@ -66,11 +69,16 @@ const buttonStyle2 ={fontFamily:'open sans,serif', color:' #E6A64CFF', backgroun
                 Our Featured Courses
             </div>
             <div style={{display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', padding:'3rem'}}>
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
+            <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels'/>
+            <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner'/>
             </div>
             <button style={buttonStyle2}>View All Courses</button>
+        </div>
+
+        <div style={{textAlign:'center'}}>
+            <strong style={{fontFamily:'Merryweather, serif', fontStyle:'italic', fontSize:'2rem', color:'#565D6DFF'}}>"Inquiries in submission constitute the proper combination for spiritual understanding."</strong>
+            <p style={{fontFamily:'Merryweather', color:'#565D6DFF'}}>- A. C. Bhaktivedanta Swami Prabhupada</p>
         </div>
         </div>
     )
