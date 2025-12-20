@@ -3,6 +3,7 @@ import {CourseCard} from './Card.jsx'
 import gita from './assets/gita.jpg'
 import mantra from './assets/mantra.jpeg'
 import kirtan from './assets/kirtan.jpg'
+import { Link } from 'react-router-dom'
 
 export default function Home()
 {
@@ -52,6 +53,15 @@ const headingStyle2 = {
 }
 
 const buttonStyle2 ={fontFamily:'open sans,serif', color:' #92692fff', backgroundColor:'#FFFFFFFF', borderColor:'#E6A64CFF', borderRadius:'6px', fontSize:'14px', padding:'0.4rem'}
+
+
+const scrollToFeatured= ()=>{
+    const featuredSection = document.getElementById('featured-courses');
+    if(featuredSection){
+        featuredSection.scrollIntoView({behavior:'smooth'});
+    }
+}
+
     return(
         <div>
         <div style={pageStyle}>
@@ -59,21 +69,23 @@ const buttonStyle2 ={fontFamily:'open sans,serif', color:' #92692fff', backgroun
 
         <div style={headingStyle}>Discover Inner Harmony through Ancient Wisdom.</div>
         <p style={subtitleStyle}>Learnix offers a peaceful and devotional platform to explore spiritual knowledge and  practices, guiding you towards a fulfilling life grounded in timeless traditions.</p>
-        <button style={buttonStyle}>Browse All Courses</button>
+        <button style={buttonStyle} onClick={scrollToFeatured}>Browse Courses</button>
             </div>
         </div>
 
-        <div style={{textAlign:'center', margin:'5rem'}}>
+        <div id='featured-courses' style={{textAlign:'center', margin:'5rem'}}>
 
             <div style={headingStyle2}>
                 Our Featured Courses
             </div>
-            <div style={{display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', padding:'3rem'}}>
+            <div style={{display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', margin:'2rem auto'}}>
             <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
             <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels'/>
             <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner'/>
             </div>
-            <button style={buttonStyle2}>View All Courses</button>
+            <Link to='/courses' style={{textDecoration:'none'}}>
+                <button style={buttonStyle2}>View All Courses</button>
+            </Link>
         </div>
 
         <div style={{textAlign:'center'}}>
