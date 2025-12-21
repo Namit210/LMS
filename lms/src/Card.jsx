@@ -1,3 +1,4 @@
+import { IoMdTv } from "react-icons/io"
 
 export function CourseCard({ title, subtitle, imageUrl, level }) { 
 
@@ -278,4 +279,84 @@ export function CertificateCard({ courseName, issueDate, certificateUrl }) {
             </a>
         </div>
     );
+}
+
+export function SimpleCard({children}){
+
+    const containerStyle={
+        width:'80%',
+        backgroundColor:'#fdfdbbff',
+        padding:'1rem',
+        borderRadius:'8px',
+        boxShadow:'0 2px 5px rgba(0,0,0,0.1)',
+        minHeight:'5rem',
+    }
+    return(
+        <div style={containerStyle}>
+{children}
+
+        </div>
+    )
+}
+
+export function LiveClass({head, date, time}){
+
+    const headStyle={
+        fontFamily:'Merriweather, serif',
+        margin:'0 0 0.5rem 0',
+        padding:'0'
+    }
+
+    const subheadStyle={
+        fontFamily:'Open Sans, serif',
+        fontSize:'1rem',
+        margin:'0',
+        padding:'0',
+        color:'#555555ff'
+    }
+
+    const buttonStyle={
+        padding: '0.5rem 0.8rem',
+        fontSize: '0.9rem',
+        fontFamily:'open-sans, sans-serif',
+        color: '#000000ff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        boxShadow: '0 4px 6px rgba(26, 22, 22, 0.1)',
+        marginLeft:'1rem',
+        alignItems:'center',
+        display:'flex',
+        gap:'0.2rem'
+    }
+
+    const joinButtonStyle={
+        ...buttonStyle,
+        backgroundColor:'#c7c400ff',
+        color:'white',
+        justifyContent:'space-between',
+        gap:'0.6rem'
+    }
+
+    const manageButtonStyle={
+        ...buttonStyle,
+        backgroundColor:'transparent',
+        border:'1px solid #ccc'
+    }
+
+    return(
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center',backgroundColor:'#faf9f9ff', padding:'1rem', borderRadius:'8px', boxShadow:'0 2px 5px rgba(0,0,0,0.1)'}}>
+            <div>
+            <h3 style={headStyle}>{head}</h3>
+            <p style={subheadStyle}>{date} | {time}</p>    
+            </div>
+            <div style={{display:'flex', gap:'0.5rem'}}>
+                <button style={joinButtonStyle}>
+                    Join
+                    <IoMdTv />
+                    </button>
+                <button style={manageButtonStyle}>Manage</button>
+            </div>
+        </div>
+    )
 }

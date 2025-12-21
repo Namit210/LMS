@@ -1,4 +1,7 @@
+import { FiBookOpen } from "react-icons/fi";
+import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { BiHomeAlt } from "react-icons/bi";
 
 export default function SideBar({active}){
      const listItemStyle ={
@@ -14,7 +17,7 @@ export default function SideBar({active}){
 
     const sidebarStyle={
         position: 'fixed',
-        top: '60px',
+        top: '55px',
         left: active ? '0' : '-250px',
         width:'220px',
         height: 'calc(100vh - 60px)',
@@ -35,14 +38,32 @@ export default function SideBar({active}){
                     onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
                     onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
                         
+                     <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                        <BiHomeAlt                       />
                     Dashboard
+                        </div>
                         
                 </li></Link>
+
+                <Link to='/manage' style={{textDecoration:'none'}}>
                 <li style={listItemStyle}
                     onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
                     onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
-                    My Courses
-                </li>
+                        <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                        <FiBookOpen />
+                    Manage Courses
+                        </div>
+                </li></Link>
+
+                <Link to='/create' style={{textDecoration:'none'}}>
+                <li style={listItemStyle}
+                    onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                    onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                     <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                        <FaPlus />
+                    Create Course
+                        </div>
+                </li></Link>
             </ul>
         </div>
     )

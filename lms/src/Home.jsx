@@ -14,7 +14,7 @@ const headingStyle ={
     fontFamily: 'Merryweather, serif',
 }
 
-const pageStyle = {textAlign:'center', alignItems:'center', backgroundImage:`url(${bgimage})`, backgroundSize:'cover', height:'90vh', color:'#fff', display:'flex', flexDirection:'column', justifyContent:'center', gap:'1rem',
+const pageStyle = {textAlign:'center', alignItems:'center', backgroundImage:`url(${bgimage})`, backgroundSize:'cover', color:'#fff', display:'flex', flexDirection:'column', justifyContent:'center', gap:'1rem',
 height:'70vh',
 overflow:'hidden'
 }
