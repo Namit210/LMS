@@ -1,0 +1,17 @@
+{
+    "courseId": "course123",
+    "name": "Gita",
+        "chapters": [
+            {
+                "chapterId": "chapter1",
+                "title": "Setting up the Scene",
+                "desc": "Arjuna goes into dilemma about fighting in the war.",
+                "imgUrl": "https://example.com/image1.jpg"
+            },
+            {
+                "chapterId": "chapter2",
+                "title": "Summary of Bhagavad Gita",
+                "desc": "Krsna explains the essence of the Gita.",
+                "imgUrl": "https://example.com/image2.jpg"
+            }]
+}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Login() {
     const containerStyle = {
         alignItems: 'center',
@@ -30,7 +32,7 @@ export default function Login() {
                         <input type="password" placeholder="Password" style={inputStyle} id="pass"/>
                         <button type="submit" style={{ padding: '0.75rem', borderRadius: '5px', border: 'none', backgroundColor: '#d4d13fff', color: '#000000ff', fontSize: '1rem', cursor: 'pointer', marginTop:'0.5rem' }}>Login</button>
 
-                        <p style={{textAlign:'center'}}>Don't have an account <a href="">Sign Up</a> </p>
+                        <p style={{textAlign:'center'}}>Don't have an account? <Link to="/signup" style={{color:'#4a9eff', textDecoration:'none'}}>Sign Up</Link></p>
                     </div>
                 </form>
             </div>

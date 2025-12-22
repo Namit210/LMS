@@ -14,13 +14,13 @@ export default function Courses() {
             <div style={{                                width: '80%' }}> 
             <div style={{ fontFamily: 'Merriweather, serif', fontSize: '2rem', marginBottom: '1.5rem', fontWeight: 'bold' }}>All Courses</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course123' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course124' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course125' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course126' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course127' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course128' />
+                <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course129' />
             </div>
             </div>
         </div>

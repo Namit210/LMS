@@ -6,7 +6,7 @@ import { BsCameraVideo } from "react-icons/bs";
 import { FiBookOpen } from "react-icons/fi";
 import liveClasses from './data/liveclass.json';
 
-export function StudentDashboard() {
+export function StudentDashboard({ userProfile = { name: 'Harish Yadav', email: 'hariyadav@gmail.com' } }) {
     const profileStyle = {
         border: '1px solid #ccc',
         borderRadius: '10px',
@@ -31,7 +31,7 @@ export function StudentDashboard() {
                     <h2>
                         My Profile
                     </h2>
-                    <ProfileCard name="Harish Yadav" email="hariyadav@gmail.com" imageUrl={sample} />
+                    <ProfileCard name={userProfile.name} email={userProfile.email} imageUrl={sample} />
                 </div>
             </div>
             <div style={coursesStyle}>  <h2>
@@ -61,7 +61,7 @@ export function StudentDashboard() {
     );
 }
 
-export function InstructorDashboard() {
+export function InstructorDashboard({ userProfile = { name: 'Dev Narayan', email: 'devnarayan@learnix.com' } }) {
     const profileStyle = {
         border: '1px solid #ccc',
         borderRadius: '10px',
@@ -82,7 +82,7 @@ export function InstructorDashboard() {
                     <h2>
                         My Profile
                     </h2>
-                    <ProfileCard name="Dev Narayan" email="devnarayana@gmail.com" imageUrl={sample} />
+                    <ProfileCard name={userProfile.name} email={userProfile.email} imageUrl={sample} />
                 </div>
             </div>
             <div >

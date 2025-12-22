@@ -3,6 +3,8 @@ import courses from './data/coursedata.json'
 import { GoPencil } from "react-icons/go";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiFilter } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
 export default function ManageCourses(){
 
     const createButtonStyle={
@@ -56,10 +58,12 @@ export default function ManageCourses(){
         <div style={{padding:'0 10%'}}>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'1rem'}}>
                 <h1>Manage Courses</h1>
+                <Link to='/create' style={{textDecoration:'none'}}>
                 <button style={createButtonStyle}>
                  <FaPlus />
                  Create New Course
                 </button>
+                </Link>
             </div>
             <div style={{display:'flex',alignItems:'center', marginBottom:'1rem',boxShadow:'0 2px 5px rgba(0,0,0,0.08)', padding:'1.2rem', borderRadius:'8px', gap:'1rem', backgroundColor:'white'}}>
                 <FiFilter style={{fontSize:'1.3rem', color:'#666', flexShrink:'0'}}/>

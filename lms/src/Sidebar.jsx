@@ -2,8 +2,9 @@ import { FiBookOpen } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { BiHomeAlt } from "react-icons/bi";
+import { MdSchool, MdPerson } from "react-icons/md";
 
-export default function SideBar({active}){
+export default function SideBar({active, userRole = 'student'}){
      const listItemStyle ={
         listStyleType:'none',
         color:' #e6e7ebff',
@@ -33,37 +34,83 @@ export default function SideBar({active}){
     return(
         <div style={sidebarStyle}>
             <ul style={{listStyleType:'none', padding:'0', margin:'0'}}>
-<Link to='/dashboard' style={{textDecoration:'none'}}>
-                <li style={listItemStyle} 
-                    onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
-                    onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
-                        
-                     <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
-                        <BiHomeAlt                       />
-                    Dashboard
-                        </div>
-                        
-                </li></Link>
 
-                <Link to='/manage' style={{textDecoration:'none'}}>
-                <li style={listItemStyle}
-                    onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
-                    onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                {/* Instructor Menu Items */}
+                {userRole === 'instructor' && (
+                    <>
+                        <Link to='/instructor-dashboard' style={{textDecoration:'none'}}>
+                            <li style={listItemStyle} 
+                                onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                                onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                                <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                                    <BiHomeAlt />
+                                    Dashboard
+                                </div>
+                            </li>
+                        </Link>
+
+                        <Link to='/manage' style={{textDecoration:'none'}}>
+                            <li style={listItemStyle}
+                                onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                                onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                                <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                                    <FiBookOpen />
+                                    Manage Courses
+                                </div>
+                            </li>
+                        </Link>
+
+                        <Link to='/create' style={{textDecoration:'none'}}>
+                            <li style={listItemStyle}
+                                onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                                onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                                <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                                    <FaPlus />
+                                    Create Course
+                                </div>
+                            </li>
+                        </Link>
+                    </>
+                )}
+
+                {/* Student Menu Items */}
+                {userRole === 'student' && (
+                    <>
+                        <Link to='/student-dashboard' style={{textDecoration:'none'}}>
+                            <li style={listItemStyle} 
+                                onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                                onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                                <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                                    <BiHomeAlt />
+                                    Dashboard
+                                </div>
+                            </li>
+                        </Link>
+
+                        <Link to='/my-learning' style={{textDecoration:'none'}}>
+                            <li style={listItemStyle}
+                                onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                                onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
+                                <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
+                                    <MdSchool />
+                                    My Learning
+                                </div>
+                            </li>
+                        </Link>
+                    </>
+                )}
+
+                {/* Common Menu Items (Both Roles) */}
+                <Link to='/profile' style={{textDecoration:'none'}}>
+                    <li style={listItemStyle}
+                        onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
+                        onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
                         <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
-                        <FiBookOpen />
-                    Manage Courses
+                            <MdPerson />
+                            Profile
                         </div>
-                </li></Link>
-
-                <Link to='/create' style={{textDecoration:'none'}}>
-                <li style={listItemStyle}
-                    onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#2a2a2a'; e.currentTarget.style.color = '#4a9eff';}}
-                    onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#e6e7ebff';}}>
-                     <div style={{alignItems:'center', gap:'1rem', display:'flex'}}>
-                        <FaPlus />
-                    Create Course
-                        </div>
-                </li></Link>
+                    </li>
+                </Link>
             </ul>
         </div>
     )

@@ -79,9 +79,9 @@ const scrollToFeatured= ()=>{
                 Our Featured Courses
             </div>
             <div style={{display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', margin:'2rem auto'}}>
-            <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' />
-            <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels'/>
-            <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner'/>
+            <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course123' />
+            <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels' courseId='course124'/>
+            <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner' courseId='course125'/>
             </div>
             <Link to='/courses' style={{textDecoration:'none'}}>
                 <button style={buttonStyle2}>View All Courses</button>

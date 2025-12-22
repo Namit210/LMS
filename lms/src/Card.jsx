@@ -1,6 +1,7 @@
 import { IoMdTv } from "react-icons/io"
+import { Link } from "react-router-dom"
 
-export function CourseCard({ title, subtitle, imageUrl, level }) { 
+export function CourseCard({ title, subtitle, imageUrl, level, courseId }) { 
 
     const imageStyle = {
         width: '100%'
@@ -72,7 +73,9 @@ export function CourseCard({ title, subtitle, imageUrl, level }) {
     }}>
 
     <p style={subtextStyle}>{subtitle}</p>
-    <button style={buttonStyle}>View Course</button>
+    <Link to={`/course/${courseId}`} style={{textDecoration:'none'}}>
+        <button style={buttonStyle}>View Course</button>
+    </Link>
     </div>
 
 </div>
